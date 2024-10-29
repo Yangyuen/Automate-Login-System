@@ -12,7 +12,7 @@ def login_test(username_input, password_input, expected_result):
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
 
-    driver.get("https://timesheet.onetoonecontacts.com:8082/oto_timesheet")  # เปลี่ยน URL ตามจริง
+    driver.get("ใส่ URL ที่ต้องการ")  # เปลี่ยน URL ตามจริง
     
     try:
         # ป้อน Username
@@ -58,12 +58,12 @@ def login_test(username_input, password_input, expected_result):
 # Test Case 1: Valid Login with Correct Credentials
 def test_valid_login():
     print("Test Case 1: Valid Login")
-    login_test('1000616541', 'Skyy_20242', 'valid')  # ใส่ข้อมูลที่ถูกต้อง
+    login_test('กรอก Username ที่ถูกต้อง', 'กรอก Password ที่ถูกต้อง', 'valid')  # ใส่ข้อมูลที่ถูกต้อง
 
 # Test Case 2: Invalid Login with Incorrect Password
 def test_invalid_login():
     print("Test Case 2: Invalid Login")
-    login_test('1000616541', 'Skyy12345', 'invalid')  # ใส่ข้อมูลที่ไม่ถูกต้อง
+    login_test('กรอก Username ที่ไม่ถูกต้อง', 'กรอก Password ที่ไม่ถูกต้อง', 'invalid')  # ใส่ข้อมูลที่ไม่ถูกต้อง
 
 # Test Case 3: Empty Username and Password
 def test_empty_login():

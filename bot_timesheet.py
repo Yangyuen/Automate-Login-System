@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager  # ใช้เพื�
 from datetime import datetime
 
 # อ่านข้อมูลจากไฟล์ Excel
-excel_path = r'C:\Users\Yungyuen.K\Desktop\Test\job_data_example.xlsx'
+excel_path = r'ป้อน Path File Excel' #ป้อน Path ของไฟล์ Excel
 data = pd.read_excel(excel_path, sheet_name='Sheet1') #อ่านจาก Sheet Name "Sheet1"
 
 # แปลงคอลัมน์วันที่ให้เป็น datetime object
@@ -20,19 +20,19 @@ service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
 
 # 1. Login เข้าเว็บไซต์
-driver.get('https://timesheet.onetoonecontacts.com:8082/oto_timesheet/account/sign_in')
+driver.get('ป้อน URL')
 
 # รอให้หน้าเว็บโหลดและกรอก Username และ Password (ใช้ WebDriverWait)
 username = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.XPATH, '//*[@id="sign_in_username"]'))
 )
-username.send_keys('1006400143') #กรอก Username
+username.send_keys('ป้อน Username') #กรอก Username
 
 # รอให้ฟิลด์ Password ปรากฏ (ลองใช้ XPATH แทน NAME)
 password = WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.XPATH, '//*[@id="sign_in_password"]'))
 )
-password.send_keys('P@ssw0rd') #กรอก Password
+password.send_keys('ป้อน Password') #กรอก Password
 
 # ส่งฟอร์ม (กด Enter เพื่อ Login)
 password.send_keys(Keys.RETURN)
@@ -43,7 +43,7 @@ WebDriverWait(driver, 10).until(
 )
 
 # 2. คลิก Link: Timesheet
-driver.get('https://timesheet.onetoonecontacts.com:8082/oto_timesheet/time_sheet')
+driver.get('คลิก URL ที่ต้องการ') #ให้คลิก URL ที่ต้องการ
 
 # รอให้หน้าเว็บโหลด
 WebDriverWait(driver, 3).until(
